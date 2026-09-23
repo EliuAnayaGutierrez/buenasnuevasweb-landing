@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Iglesia Cristiana Evangélica ADP Buenas Nuevas - Ayacucho. Un lugar de fe, familia y esperanza en Cristo. Conoce nuestra misión, doctrinas, pastores y horarios de culto."
+    />
+    <title>Iglesia Buenas Nuevas | Ayacucho</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/fontawesome/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" href="Images/Logo-asamblea-de-Dios-blanco.ico" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Enlace de salto para navegación por teclado / lectores de pantalla -->
+    <a href="#fondo-principal" class="skip-link"
+      >Saltar al contenido principal</a
+    >
+
+    <div id="preloader" aria-hidden="true">
+      <div id="preloader-content">
+        <img src="../Images/logoadp.png" alt="" id="preloader-logo" />
+        <div id="preloader-text">
+          <span class="line-accent"></span>
+        </div>
+      </div>
+    </div>
+    <div id="banner-modal" class="banner-modal" hidden>
+      <div class="banner-modal-backdrop" id="banner-modal-backdrop"></div>
+      <div
+        class="banner-modal-content"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="banner-modal-titulo"
+      >
+        <button
+          type="button"
+          class="banner-modal-close"
+          id="banner-modal-close"
+          aria-label="Cerrar"
+        >
+          &times;
+        </button>
+        <div class="banner-modal-media" id="banner-modal-media"></div>
+        <div class="banner-modal-info">
+          <h2 id="banner-modal-titulo"></h2>
+          <p id="banner-modal-descripcion"></p>
+          <p class="banner-modal-fecha" id="banner-modal-fecha"></p>
+        </div>
+        <div class="banner-modal-dots" id="banner-modal-dots"></div>
+      </div>
+    </div>
+    <button
+      type="button"
+      id="banner-reabrir"
+      class="banner-reabrir"
+      aria-label="Ver anuncios"
+      hidden
+    >
+      <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+    </button>
+
+    <div id="main-content">
+      <header class="header">
+        <a href="#fondo-principal" class="logo-link" aria-label="Ir al inicio">
+          <div class="logo">
+            <img
+              src="../Images/logoadp.png"
+              alt="Logotipo Asambleas de Dios del Perú"
+            />
+            <span class="brand">Buenas Nuevas</span>
+          </div>
+        </a>
+
+        <!-- Botón hamburguesa: controla el menú móvil mediante JavaScript -->
+        <button
+          type="button"
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-controls="nav-menu"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav" id="nav-menu" aria-label="Navegación principal">
+          <button
+            type="button"
+            class="nav-close"
+            id="nav-close"
+            aria-label="Cerrar menú"
+          >
+            &times;
+          </button>
+          <ul class="nav-links">
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#mision-vision">Misión y visión</a></li>
+            <li><a href="#doctrinas">Doctrinas</a></li>
+            <li><a href="#pastores-principales">Nuestros pastores</a></li>
+            <li><a href="#galeria">Galería</a></li>
+          </ul>
+          <a href="#contacto" class="btn"
+            ><button type="button">Contacto</button></a
+          >
+          <a
+            href="#"
+            id="login-panel-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="login-discreto"
+            aria-label="Iniciar sesión"
+          >
+            <i class="fa-solid fa-user" aria-hidden="true"></i>
+          </a>
+        </nav>
+
+        <div class="nav-overlay" id="nav-overlay"></div>
+      </header>
+
+      <main>
+        <section id="fondo-principal" class="fondo-principal">
+          <video
+            class="video-background"
+            autoplay
+            muted
+            loop
+            playsinline
+            aria-hidden="true"
+          >
+            <source src="../Video/bosque.mp4" type="video/mp4" />
+          </video>
+          <div class="content">
+            <h1>Paz</h1>
+            <p>
+              Entre hojas que caen, Dios nos recuerda que en Él descansa nuestra
+              alma.
+            </p>
+            <p>
+              “Tú guardarás en perfecta paz a aquel cuyo pensamiento en ti
+              persevera, porque en ti ha confiado.” — Isaías 26:3
+            </p>
+          </div>
+        </section>
+        <section
+          id="reflexion"
+          class="reflexion-section"
+          aria-labelledby="reflexion-titulo"
+        >
+          <div class="reflexion-container">
+            <h2 id="reflexion-titulo" class="visually-hidden">
+              Reflexión del día
+            </h2>
+            <p class="reflexion-etiqueta">Reflexión de hoy</p>
+            <p class="reflexion-fecha" id="reflexion-fecha"></p>
+            <p class="reflexion-texto" id="reflexion-texto"></p>
+            <div class="reflexion-versiculo">
+              <p id="reflexion-versiculo-texto"></p>
+              <p class="reflexion-referencia" id="reflexion-referencia"></p>
+            </div>
+          </div>
+        </section>
+        <section
+          id="nosotros"
+          class="about-us-section section-layout"
+          aria-labelledby="nosotros-titulo"
+        >
+          <div class="about-content">
+            <h2 id="nosotros-titulo">Sobre nosotros</h2>
+            <p id="about-description" class="justificado">
+              Somos una iglesia que cree en la transformación del corazón
+              mediante el encuentro con Jesús. Aspiramos a ser un refugio de fe,
+              compasión y verdad, donde cada vida encuentre propósito y cada
+              familia descubra la esperanza que solo Dios puede dar. Nuestro
+              compromiso es vivir la Palabra y extenderla con humildad y amor.
+            </p>
+            <p class="pasaje">
+              <b
+                >“Lámpara es a mis pies tu palabra, y lumbrera a mi camino.”
+                <br />Salmos 119:105</b
+              >
+            </p>
+          </div>
+
+          <div class="polaroid-gallery">
+            <figure class="polaroid">
+              <img
+                src="Images/foto11.jpg"
+                alt="Congregación en un tiempo de adoración"
+              />
+              <figcaption>Adoración</figcaption>
+            </figure>
+            <figure class="polaroid">
+              <img
+                src="Images/foto02.jpg"
+                alt="Miembros sirviendo durante el culto"
+              />
+              <figcaption>Servicio</figcaption>
+            </figure>
+            <figure class="polaroid">
+              <img
+                src="Images/foto12.jpg"
+                alt="Familias reunidas en la iglesia"
+              />
+              <figcaption>Familia</figcaption>
+            </figure>
+            <figure class="polaroid">
+              <img
+                src="Images/foto09.jpg"
+                alt="Congregación unida en oración"
+              />
+              <figcaption>Unidad</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section
+          id="mision-vision"
+          class="mision-vision-section section-layout"
+          aria-labelledby="mision-vision-titulo"
+        >
+          <div class="mision-vision-picture">
+            <figure class="mission-vision-photo">
+              <img
+                src="Images/mision-vision.jpg"
+                alt="Miembros de la iglesia representando la misión y visión"
+              />
+              <figcaption>Nuestra misión y visión</figcaption>
+            </figure>
+          </div>
+          <div class="mision-vision-content">
+            <h2 id="mision-vision-titulo" class="visually-hidden">
+              Misión y visión
+            </h2>
+            <h3>Misión</h3>
+            <p class="justificado">
+              Anunciar el evangelio de Jesucristo, formando discípulos y
+              sirviendo con amor a nuestra comunidad.
+            </p>
+            <h3>Visión</h3>
+            <p class="justificado">
+              Ser una iglesia que refleja el amor de Cristo, transformando vidas
+              y alcanzando generaciones para Dios.
+            </p>
+          </div>
+        </section>
+
+        <!-- Ancla usada por el botón de cierre del modal de doctrinas -->
+        <div id="close-modal"></div>
+
+        <section
+          id="doctrinas"
+          class="doctrinas-section section-layout"
+          aria-labelledby="doctrinas-titulo"
+        >
+          <div class="doctrinas-content">
+            <h2 id="doctrinas-titulo">Nuestras doctrinas</h2>
+            <p id="doctrinas-description" class="justificado">
+              Las Asambleas de Dios del Perú enseñan que la Biblia es la
+              autoridad suprema de la fe cristiana, creen en un solo Dios en
+              tres personas (Padre, Hijo y Espíritu Santo) y en la salvación por
+              gracia mediante la fe en Jesucristo. Además, enfatizan la obra del
+              Espíritu Santo, la vida santa, la evangelización y la esperanza
+              del regreso de Cristo.
+            </p>
+            <a href="#doctrinas-modal" class="doctrine-main-btn"
+              >Ver nuestras doctrinas</a
+            >
+          </div>
+          <div class="doctrinas-picture">
+            <figure class="doctrinas-photo">
+              <img
+                src="Images/doctrina.jpg"
+                alt="Biblia abierta, símbolo de nuestras doctrinas"
+              />
+              <figcaption>Nuestras doctrinas</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section
+          id="pastores-principales"
+          class="pastores-principales-section section-layout"
+          aria-labelledby="pastores-titulo"
+        >
+          <div class="pastores-principales-picture">
+            <figure class="pastores-principales-photo">
+              <img
+                id="pastores-img"
+                src="Images/prguzman.jpg"
+                alt="Pastores principales de la iglesia"
+              />
+              <figcaption>Pastores principales</figcaption>
+            </figure>
+          </div>
+          <div class="pastores-principales-content">
+            <h2 id="pastores-titulo">Pastores principales</h2>
+            <p id="pastores-principales-description" class="justificado">
+              Nuestros pastores, Pr. Guzmán Anaya y su amada esposa Pra. Martha
+              Gutiérrez, han sido llamados por Dios para servir con amor,
+              entrega y fidelidad. A lo largo del tiempo han caminado firmes en
+              su vocación, guiando a la congregación con sabiduría, oración y un
+              corazón dispuesto, aun en medio de pruebas y dificultades. Su
+              labor constante ha sido un reflejo del compromiso genuino con la
+              obra del Señor y con cada familia que forma parte de esta iglesia.
+              Con paciencia y fe, han sembrado esperanza, restauración y unidad,
+              confiando siempre en que Dios es quien fortalece y sostiene cada
+              paso del camino.
+            </p>
+            <p class="pasaje">
+              <b
+                >“Por tanto, mis amados hermanos, estad firmes y constantes,
+                creciendo en la obra del Señor siempre, sabiendo que vuestro
+                trabajo en el Señor no es en vano.” <br />1 Corintios 15:58</b
+              >
+            </p>
+          </div>
+        </section>
+
+        <section
+          id="galeria"
+          class="gallery-section"
+          aria-labelledby="galeria-titulo"
+        >
+          <div class="gallery-content">
+            <h2 id="galeria-titulo">Nuestros recuerdos</h2>
+            <div class="gallery-description">
+              <p>
+                Estas imágenes testimonian la vida de nuestra iglesia como un
+                solo cuerpo en Cristo. A través de los encuentros con nuestros
+                niños, los bautismos, los tiempos de adoración y la enseñanza de
+                la Palabra, se manifiestan la comunión, la armonía y el amor
+                fraternal que Dios nos llama a vivir. Cada momento compartido
+                fortalece la fe, edifica los corazones y reafirma nuestro
+                compromiso de caminar juntos, sirviendo al Señor con reverencia,
+                unidad y obediencia, como una familia espiritual guiada por su
+                gracia.
+              </p>
+              <p class="pasaje">
+                <b
+                  >“Antes bien, crezcamos en todo en aquel que es la cabeza,
+                  esto es, Cristo.”</b
+                >
+                <br />
+                Efesios 4:15
+              </p>
+            </div>
+          </div>
+
+          <div class="carousel">
+            <div class="group" id="galeria-grupo-1"></div>
+            <div class="group" id="galeria-grupo-2" aria-hidden="true"></div>
+          </div>
+        </section>
+
+        <section
+          id="contacto"
+          class="location-section"
+          aria-labelledby="contacto-titulo"
+        >
+          <div class="container">
+            <div class="section-header">
+              <h2 id="contacto-titulo" class="section-title">
+                Ven y acompáñanos
+              </h2>
+              <p class="section-subtitle">
+                Te esperamos con los brazos abiertos
+              </p>
+            </div>
+
+            <div class="map-wrapper">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d242.81049912078478!2d-74.21994242063938!3d-13.16441854917603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91127d8aeeb741e5%3A0x12712ed09b8069b1!2sIglesia%20Cristiana%20Evang%C3%A9lica%20ADP%20Buenas%20Nuevas!5e0!3m2!1ses-419!2spe!4v1766875591866!5m2!1ses-419!2spe"
+                width="100%"
+                height="450"
+                style="border: 0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="custom-map"
+                title="Ubicación de Iglesia Cristiana Evangélica ADP Buenas Nuevas"
+              >
+              </iframe>
+
+              <div class="map-overlay">
+                <div class="location-info">
+                  <h3>Nuestra ubicación</h3>
+                  <p>
+                    <strong
+                      >Iglesia Cristiana Evangélica ADP Buenas Nuevas</strong
+                    >
+                  </p>
+                  <p>Jr. Ica 140, San Juan Bautista, Ayacucho, Perú</p>
+                  <a
+                    href="https://maps.google.com/?q=-13.16441854917603,-74.21994242063938"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="directions-btn"
+                  >
+                    Abrir en Google Maps
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="location-details">
+              <div class="detail-card">
+                <div class="detail-icon" aria-hidden="true">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <h3>Horarios de culto</h3>
+                <p>Domingos: 9:00 a. m. – 12:00 p. m.</p>
+                <p>Domingos: 6:00 p. m. – 8:00 p. m.</p>
+                <p>Sábados: 6:00 p. m. – 8:00 p. m.</p>
+                <p>Jueves: 6:00 p. m. – 8:30 p. m.</p>
+                <p>Martes: 6:00 p. m. – 8:00 p. m.</p>
+              </div>
+              <div class="detail-card">
+                <div class="detail-icon" aria-hidden="true">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <h3>Contacto</h3>
+                <p><a href="tel:+51996885001">Celular: +51 996 885 001</a></p>
+                <p><a href="tel:+51966142489">Celular: +51 966 142 489</a></p>
+                <p><a href="tel:+51988607086">Celular: +51 988 607 086</a></p>
+                <p><a href="tel:+51966009418">Celular: +51 966 009 418</a></p>
+                <p>
+                  <a href="mailto:info@buenasnuevas.com"
+                    >info@buenasnuevas.com</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="audio-section" aria-labelledby="audio-titulo">
+          <div class="audio-container">
+            <div class="audio-header">
+              <h2 id="audio-titulo">Música para el alma</h2>
+              <p>Alabanza y adoración de nuestra congregación</p>
+            </div>
+
+            <div class="player-card">
+              <div class="player-inner">
+                <div class="track-meta">
+                  <div class="track-art" aria-hidden="true">🎵</div>
+                  <div class="track-info">
+                    <p class="track-title" id="track-title">
+                      Selecciona una canción
+                    </p>
+                    <p class="track-artist" id="track-artist">
+                      Iglesia ADP Buenas Nuevas
+                    </p>
+                    <p class="track-album" id="track-album">
+                      Alabanza y adoración
+                    </p>
+                  </div>
+                </div>
+
+                <div class="track-select-wrapper">
+                  <label for="track-select">Seleccionar canción</label>
+                  <select class="track-select" id="track-select">
+                    <option value="">— Elige una canción —</option>
+                  </select>
+                </div>
+
+                <div class="progress-area">
+                  <div
+                    class="progress-track"
+                    id="progress-track"
+                    role="slider"
+                    tabindex="0"
+                    aria-label="Progreso de la canción"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow="0"
+                  >
+                    <div class="progress-fill" id="progress-fill"></div>
+                  </div>
+                  <div class="time-row">
+                    <span id="time-current">0:00</span>
+                    <span id="time-total">0:00</span>
+                  </div>
+                </div>
+
+                <div class="controls-row">
+                  <button
+                    type="button"
+                    class="ctrl-btn"
+                    id="btn-prev"
+                    title="Anterior"
+                    aria-label="Canción anterior"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 6h2v12H6V6zm3.5 6 8.5 6V6l-8.5 6z" />
+                    </svg>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="ctrl-btn"
+                    id="btn-rewind"
+                    title="Retroceder 10s"
+                    aria-label="Retroceder 10 segundos"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M11.99 5V1l-5 5 5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6h-2c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"
+                      />
+                      <text
+                        x="8"
+                        y="14.5"
+                        font-size="5.5"
+                        fill="currentColor"
+                        font-family="Arial"
+                        font-weight="bold"
+                      >
+                        10
+                      </text>
+                    </svg>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="play-btn"
+                    id="btn-play"
+                    aria-label="Reproducir"
+                  >
+                    <svg
+                      id="icon-play"
+                      width="26"
+                      height="26"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                      aria-hidden="true"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                    <svg
+                      id="icon-pause"
+                      width="26"
+                      height="26"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                      style="display: none"
+                      aria-hidden="true"
+                    >
+                      <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                    </svg>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="ctrl-btn"
+                    id="btn-forward"
+                    title="Adelantar 10s"
+                    aria-label="Adelantar 10 segundos"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M18 13c0 3.31-2.69 6-6 6s-6-2.69-6-6 2.69-6 6-6v4l5-5-5-5v4c-4.42 0-8 3.58-8 8s3.58 8 8 8 8-3.58 8-8h-2z"
+                      />
+                      <text
+                        x="8"
+                        y="14.5"
+                        font-size="5.5"
+                        fill="currentColor"
+                        font-family="Arial"
+                        font-weight="bold"
+                      >
+                        10
+                      </text>
+                    </svg>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="ctrl-btn"
+                    id="btn-next"
+                    title="Siguiente"
+                    aria-label="Siguiente canción"
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M6 18l8.5-6L6 6v12zm2-8.14 4.96 3.5L8 18.14V9.86zM16 6h2v12h-2V6z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="volume-row">
+                  <span class="vol-icon" aria-hidden="true">🔈</span>
+                  <input
+                    type="range"
+                    class="vol-slider"
+                    id="vol-slider"
+                    min="0"
+                    max="100"
+                    value="80"
+                    aria-label="Volumen"
+                  />
+                  <span class="vol-label" id="vol-label">80%</span>
+                </div>
+                <audio id="audio-player"></audio>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Modal de doctrinas (patrón CSS :target, sin dependencias externas) -->
+      <div id="doctrinas-modal" class="modal">
+        <div
+          class="modal-content modal-pdf"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="doctrinas-modal-titulo"
+        >
+          <a href="#close-modal" class="modal-close" aria-label="Cerrar"
+            >&times;</a
+          >
+          <h2 id="doctrinas-modal-titulo">Doctrinas de la Iglesia</h2>
+          <div class="pdf-container">
+            <iframe src="Doc/DoctrinasLADP.pdf" title="Doctrinas"></iframe>
+          </div>
+          <a href="doctrinas.pdf" class="pdf-download" download
+            >Descargar PDF</a
+          >
+        </div>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-top container">
+          <div class="footer-col footer-brand">
+            <div class="footer-logo">
+              <img
+                src="../Images/logoadp.png"
+                alt="Logotipo Asambleas de Dios del Perú"
+              />
+              <span>Buenas Nuevas</span>
+            </div>
+            <p>
+              Una iglesia que cree en la transformación del corazón mediante el
+              encuentro con Jesús. Te esperamos con los brazos abiertos.
+            </p>
+            <div class="footer-social">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Síguenos en Facebook"
+              >
+                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Síguenos en Instagram"
+              >
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Síguenos en YouTube"
+              >
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </a>
+              <a
+                href="https://wa.me/51996885001"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Escríbenos por WhatsApp"
+              >
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <nav
+            class="footer-col footer-links"
+            aria-label="Enlaces del pie de página"
+          >
+            <h3>Enlaces</h3>
+            <ul>
+              <li><a href="#nosotros">Nosotros</a></li>
+              <li><a href="#mision-vision">Misión y visión</a></li>
+              <li><a href="#doctrinas">Doctrinas</a></li>
+              <li><a href="#pastores-principales">Nuestros pastores</a></li>
+              <li><a href="#galeria">Galería</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+
+          <div class="footer-col footer-schedule">
+            <h3>Horarios de culto</h3>
+            <ul>
+              <li>Domingos <span>9:00 a. m. – 12:00 p. m.</span></li>
+              <li>Domingos <span>6:00 p. m. – 8:00 p. m.</span></li>
+              <li>Sábados <span>6:00 p. m. – 8:00 p. m.</span></li>
+              <li>Jueves <span>6:00 p. m. – 8:30 p. m.</span></li>
+              <li>Martes <span>6:00 p. m. – 8:00 p. m.</span></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-contact">
+            <h3>Contacto</h3>
+            <address>
+              <p>
+                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                Jr. Ica 140, San Juan Bautista, Ayacucho, Perú
+              </p>
+              <p>
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <a href="tel:+51996885001">+51 996 885 001</a>
+              </p>
+              <p>
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                <a href="mailto:info@buenasnuevas.com">info@buenasnuevas.com</a>
+              </p>
+            </address>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            © <span id="footer-year">2026</span> Iglesia Buenas Nuevas -
+            Ayacucho
+          </p>
+          <p class="footer-dev">
+            <i class="fa-solid fa-code" aria-hidden="true"></i>
+            <a
+              href="https://wa.me/51996425399"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Eliú Anaya</a
+            >
+          </p>
+        </div>
+
+        <button
+          type="button"
+          id="back-to-top"
+          class="back-to-top"
+          aria-label="Volver arriba"
+        >
+          <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </button>
+      </footer>
+    </div>
+
+    <script src="assets/js/audio-player.js"></script>
+  </body>
+</html>
