@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', iniciarBotonLogin);
    a producción (Render, Railway, etc.)
    ============================================= */
 const API_BASE_URL = 'https://buenasnuevasweb-backend.onrender.com';
-const ADMIN_PANEL_URL = 'http://localhost:5173'; // cambiar cuando despliegues el panel
+const ADMIN_PANEL_URL = 'https://admin-buenasnuevas.netlify.app/'; // cambiar cuando despliegues el panel
 /* =============================================
    REFLEXIÓN DEL DÍA
    ============================================= */
